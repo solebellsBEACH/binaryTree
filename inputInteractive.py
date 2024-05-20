@@ -1,18 +1,24 @@
 class InputInteractive:
     
-    def InitInput(self, message):
+    def InitInput(self, message, callBack):
         value = input("\n" + message)
+        callback(value)
 
-    def LoopInput(self, message):
+    def LoopInput(self, message, callBack):
         value = 10
         while value != "0":
-            value = input("\n Para sair do loop digite 0\n" + message)
+            value = input("\nPara sair do loop digite 0\n" + message)
+            if(value != "0" ):
+                callback(value)
     
-    def InitNumberInput(self, message):
+    def InitNumberInput(self, message, callBack):
         value = int(input("\n" + message))
+        callBack(value)
 
-    def LoopNumberInput(self, message):
+    def LoopNumberInput(self, message, callBack):
         value = 10
         while value != 0:
-            value = int(input("\n Para sair do loop digite 0\n" + message))
+            value = int(input("\nPara sair do loop digite 0\n" + message))
+            if(value != 0 ):
+                callBack(value)
         
